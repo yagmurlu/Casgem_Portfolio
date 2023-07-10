@@ -1,0 +1,28 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblMessage>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+    int count = 0;
+}
+
+<h2>Gelen Kutusu</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Gönderen</th>
+        <th>Konu</th>
+        <th>Sil</th>
+        <th>Mesajı Aç</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.NameSurname</td>
+            <td>@item.MessageSubject</td>
+            <td><a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-outline-danger">SİL</a></td>
+            <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-outline-danger">Mesajı Aç</a></td>
+        </tr>
+    }
+</table>
