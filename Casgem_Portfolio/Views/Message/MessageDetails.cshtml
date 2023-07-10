@@ -5,12 +5,20 @@
         Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
     }
 
-    <h2>Mesaj Detayları</h2>
+    <h2 style="text-align:center">Mesaj Detayları</h2>
+<br />
 
-Konu: @Html.DisplayFor(x=>x.MessageSubject)
-<br />
-Gönderen: @Html.DisplayFor(x=>x.NameSurname)
-<br />
-MailAdresi :@Html.DisplayFor(x=>x.SenderMail)
-<br />
-Mesaj: @Html.DisplayFor(x => x.SenderMail)
+<table class="table table-dark">
+    <tr style="color:yellow">
+        <th>Konu</th>
+        <th>Gönderen</th>
+        <th>Mail Adresi</th>
+        <th>Mesaj</th>
+    </tr>
+    <tr>
+        <td>@Html.DisplayFor(x=>x.MessageSubject)</td>
+        <td>@Html.DisplayFor(x => x.NameSurname)</td>
+        <td>@Html.DisplayFor(x => x.SenderMail)</td>
+        <td>@Html.DisplayFor(x => x.Content)</td>
+    </tr>
+</table>

@@ -5,9 +5,9 @@
     int count = 0;
 }
 
-<h2>Gelen Kutusu</h2>
-<table class="table table-bordered">
-    <tr>
+<h2 style="text-align:center">Gelen Kutusu</h2>
+<table class="table table-dark">
+    <tr style="color:yellow">
         <th>#</th>
         <th>Gönderen</th>
         <th>Konu</th>
@@ -22,7 +22,7 @@
             <td>@item.NameSurname</td>
             <td>@item.MessageSubject</td>
             <td><a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-outline-danger">SİL</a></td>
-            <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-outline-danger">Mesajı Aç</a></td>
+            <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-outline-info">Mesajı Aç</a></td>
         </tr>
     }
 </table>
