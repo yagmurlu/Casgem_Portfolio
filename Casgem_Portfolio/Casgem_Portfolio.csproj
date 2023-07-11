@@ -135,6 +135,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\ReferenceController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
@@ -406,6 +407,8 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Statistic\Index.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Project\ProjectDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

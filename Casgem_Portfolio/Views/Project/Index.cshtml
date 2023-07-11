@@ -1,0 +1,22 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.Project>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Proje Sayfası</h2>
+<p><a href="/Project/AddProject/" class="btn btn-success">Proje Ekle</a></p>
+@foreach (var item in Model)
+{
+<div class="card text-white bg-secondary mb-3" style="max-width: 100%;">
+
+    <div class="card-body">
+        <h5 class="card-title" style="color:white"> @item.ProjectName</h5>
+        <h5 class="card-title" style="color:white"> @item.ProfectDate</h5>
+        <p ><a href="/Project/ProjectDetails/@item.ProjectID" class="btn btn-warning; float-left">Detaylar</a></p>
+        <p ><a href="/Project/DeleteProject/@item.ProjectID" class="btn btn-danger ; float-right">Sil</a></p>
+        <p ><a href="/Project/EditProject/@item.ProjectID" class="btn btn-info ; float-right">Değiştir</a></p>
+    </div>
+</div>
+}
+
