@@ -6,8 +6,12 @@
     <edmx:Diagrams>
       <Diagram DiagramId="e57bb9783bef47e68c306fd0cb895225" Name="Diagram1">
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblFeature" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CasgemPortfolioModel.TblService" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblMessage" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.Project" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.Reference" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblService" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblInterest" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblResume" Width="1.5" PointX="3.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
