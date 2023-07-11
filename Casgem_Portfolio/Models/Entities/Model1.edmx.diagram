@@ -12,6 +12,10 @@
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblService" Width="1.5" PointX="5.375" PointY="3.75" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblInterest" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblResume" Width="1.5" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.sysdiagrams" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblDepartment" Width="1.5" PointX="5.375" PointY="7.375" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblEmployee" Width="1.5" PointX="7.625" PointY="7" />
+        <AssociationConnector Association="CasgemPortfolioModel.FK_TblEmployee_TblDepartment" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
