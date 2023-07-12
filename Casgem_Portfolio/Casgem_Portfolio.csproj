@@ -409,6 +409,10 @@
     <Content Include="Views\Statistic\Index.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Project\ProjectDetails.cshtml" />
+    <Content Include="Views\Project\AddProject.cshtml" />
+    <Content Include="Views\Project\EditProject.cshtml" />
+    <Content Include="Views\Reference\AddReferance.cshtml" />
+    <Content Include="Views\Reference\EditReferance.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

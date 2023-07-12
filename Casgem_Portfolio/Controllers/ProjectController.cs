@@ -50,7 +50,7 @@ namespace Casgem_Portfolio.Controllers
             value.ProjectName= p.ProjectName;
             value.ProfectDate = p.ProfectDate;
             value.ProjectDetails = p.ProjectDetails;
-            
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
         public ActionResult ProjectDetails(int id)

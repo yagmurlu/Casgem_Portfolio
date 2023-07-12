@@ -14,7 +14,7 @@ namespace Casgem_Portfolio.Controllers
         CasgemPortfolioEntities1 db=new CasgemPortfolioEntities1();
         public ActionResult Index()
         {
-            ViewBag.emplyoyeeCount = db.TblEmployee.Count();
+            //ViewBag.emplyoyeeCount = db.TblEmployee.Count();
             //var salary = db.TblEmployee.Max(x => x.EmployeeName);
             //ViewBag.maxSalaryEmployee = db.TblEmployee.Where(x => x.EmployeeSalary == salary).Select
             //    (y => y.EmployeeName + " " + y.EmployeeSurname).FirstOrDefault();

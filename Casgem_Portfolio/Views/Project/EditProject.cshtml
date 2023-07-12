@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "EditProject";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Proje Düzenleme Sayfası</h2>
+
+<form method="post">
+    <label>Proje Adı</label>
+    <input type="text" class="form-control" name="ProjectName" />
+    <br />
+    <label>Proje Tarihi</label>
+    <input type="text" class="form-control" name="ProjectDate" />
+    <br />
+    <label>Proje İçeriği</label>
+    <input type="text" class="form-control" name="ProjectDetails" />
+
+    <br />
+    <button class="btn btn-info"> Kaydet</button>
+</form>
