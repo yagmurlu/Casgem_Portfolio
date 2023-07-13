@@ -4,6 +4,10 @@
     Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
 }
 
-<h2>@Model.ProjectName </h2>
-
-<p>@Model.ProjectDetails</p>
+<div class="card text-white badge-success mb-3" style="max-width: 100%;">
+    <div class="card-header">@Model.ProjectName</div>
+    <div class="card-body">
+        <h5 class="card-title">@Model.ProjectName</h5>
+        <p class="card-text">@Model.ProjectDetails</p>
+    </div>
+</div>

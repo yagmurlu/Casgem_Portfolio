@@ -1,10 +1,11 @@
-﻿
+﻿﻿
 @{
     ViewBag.Title = "AddService";
     Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
 }
 
 <h2>Yeni Hizmet Ekleme Sayfası</h2>
+
 <form method="post">
     <label>Hizmet Başlığı</label>
     <input type="text" class="form-control" name="ServiceTitle" />
@@ -14,9 +15,9 @@
     <br />
     <label>Hizmet Numarası</label>
     <input type="text" class="form-control" name="ServiceNumber" />
-    <label>Hizmet İçeriği</label>
     <br />
+    <label>Hizmet İçeriği</label>
     <input type="text" class="form-control" name="ServiceContent" />
     <br />
-    <button class="btn btn-info"> Kaydet</button>
+    <button class="btn btn-info">Hizmeti Kaydet</button>
 </form>

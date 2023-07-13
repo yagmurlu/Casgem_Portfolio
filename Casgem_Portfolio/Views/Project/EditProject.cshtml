@@ -1,4 +1,4 @@
-﻿
+﻿@model Casgem_Portfolio.Models.Entities.Project
 @{
     ViewBag.Title = "EditProject";
     Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
@@ -7,15 +7,17 @@
 <h2>Proje Düzenleme Sayfası</h2>
 
 <form method="post">
+    @Html.HiddenFor(x => x.ProjectID)
     <label>Proje Adı</label>
-    <input type="text" class="form-control" name="ProjectName" />
+    @Html.TextBoxFor(x => x.ProjectName, new { @class = "form-control" })
     <br />
     <label>Proje Tarihi</label>
-    <input type="text" class="form-control" name="ProjectDate" />
+    @Html.TextBoxFor(x => x.ProfectDate, new { @class = "form-control" })
     <br />
-    <label>Proje İçeriği</label>
-    <input type="text" class="form-control" name="ProjectDetails" />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.ProjectDetails, new { @class = "form-control" })
+    <br />
 
-    <br />
+
     <button class="btn btn-info"> Kaydet</button>
 </form>

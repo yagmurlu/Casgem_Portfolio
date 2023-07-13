@@ -5,8 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="CasgemPortfolioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CasgemPortfolio.dbo.Project' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Project">
           <Key>
             <PropertyRef Name="ProjectID" />
@@ -16,8 +14,6 @@ warning 6002: The table/view 'CasgemPortfolio.dbo.Project' does not have a prima
           <Property Name="ProfectDate" Type="date" />
           <Property Name="ProjectDetails" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CasgemPortfolio.dbo.Reference' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Reference">
           <Key>
             <PropertyRef Name="ReferenceID" />
@@ -54,11 +50,6 @@ warning 6002: The table/view 'CasgemPortfolio.dbo.Reference' does not have a pri
           <Property Name="EmployeeSalary" Type="decimal" Precision="18" Scale="2" />
           <Property Name="EmployeeDepartment" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmplyoyeeCount' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TblEmplyoyeeCount">
-          <Property Name="StaffCount" Type="int" />
-        </EntityType>-->
         <EntityType Name="TblFeature">
           <Key>
             <PropertyRef Name="FeatureID" />
@@ -117,6 +108,8 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmplyoyeeCount' does not ha
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="CasgemPortfolioModelStoreContainer">
+          <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDepartment" EntityType="Self.TblDepartment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" Schema="dbo" store:Type="Tables" />
@@ -125,21 +118,6 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmplyoyeeCount' does not ha
           <EntitySet Name="TblMessage" EntityType="Self.TblMessage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblResume" EntityType="Self.TblResume" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblService" EntityType="Self.TblService" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Project" EntityType="Self.Project" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Project].[ProjectID] AS [ProjectID], 
-    [Project].[ProjectName] AS [ProjectName], 
-    [Project].[ProfectDate] AS [ProfectDate], 
-    [Project].[ProjectDetails] AS [ProjectDetails]
-    FROM [dbo].[Project] AS [Project]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Reference" EntityType="Self.Reference" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Reference].[ReferenceID] AS [ReferenceID], 
-    [Reference].[NameSurname] AS [NameSurname], 
-    [Reference].[Mail] AS [Mail]
-    FROM [dbo].[Reference] AS [Reference]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_TblEmployee_TblDepartment" Association="Self.FK_TblEmployee_TblDepartment">
             <End Role="TblDepartment" EntitySet="TblDepartment" />
             <End Role="TblEmployee" EntitySet="TblEmployee" />

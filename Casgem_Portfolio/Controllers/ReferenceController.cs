@@ -29,11 +29,12 @@ namespace Casgem_Portfolio.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        [HttpGet]
+        
         public ActionResult DeleteReferance(int id)
         {
             var value = db.Reference.Find(id);
-            db.Reference.Remove(value); db.SaveChanges();
+            db.Reference.Remove(value);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
         [HttpGet]
