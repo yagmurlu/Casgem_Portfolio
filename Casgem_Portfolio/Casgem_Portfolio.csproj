@@ -138,6 +138,7 @@
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\ReferenceController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -166,6 +167,9 @@
     <Compile Include="Models\Entities\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entities\TblAbout.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entities\TblDepartment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -185,6 +189,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\TblService.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\TblSkill.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -413,6 +420,17 @@
     <Content Include="Views\Project\EditProject.cshtml" />
     <Content Include="Views\Reference\AddReferance.cshtml" />
     <Content Include="Views\Reference\EditReferance.cshtml" />
+    <Content Include="Views\Portfolio\PartialContact.cshtml" />
+    <Content Include="Views\Portfolio\PartialFooter.cshtml" />
+    <Content Include="Views\Portfolio\PartialAbout.cshtml" />
+    <Content Include="Views\Portfolio\PartialService.cshtml" />
+    <Content Include="Views\Portfolio\PartialTestimonial.cshtml" />
+    <Content Include="Views\Portfolio\PartialVideo.cshtml" />
+    <Content Include="Views\Feature\EditFeature.cshtml" />
+    <Content Include="Views\Portfolio\PartialScript.cshtml" />
+    <Content Include="Views\Skill\Index.cshtml" />
+    <Content Include="Views\Skill\EditSkill.cshtml" />
+    <Content Include="Views\Skill\AddSkill.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

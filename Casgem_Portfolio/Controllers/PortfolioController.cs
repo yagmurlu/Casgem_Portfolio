@@ -24,6 +24,14 @@ namespace Casgem_Portfolio.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult PartialContact()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialFooter()
+        {
+            return PartialView();
+        }
         public PartialViewResult PartialFeature()
         {
             ViewBag.featureTitle = db.TblFeature.Select(x => x.FetaureTitle).FirstOrDefault();
@@ -47,6 +55,31 @@ namespace Casgem_Portfolio.Controllers
             ViewBag.totalMessage = db.TblMessage.Count();
             ViewBag.totalThanksMessage = db.TblMessage.Where(x=>x.MessageSubject=="Teşkkür").Count();
             ViewBag.happyCustomer = 12;
+            return PartialView();
+        }
+        public PartialViewResult PartialAbout() 
+        {
+            var values=db.TblAbout.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialService()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialTestimonial()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialVideo()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialScript()
+        {
+            var textArray = db.TblSkill.Select(x => x.SkillName).ToArray();
+
+            ViewBag.skillArray = textArray;
+
             return PartialView();
         }
     }

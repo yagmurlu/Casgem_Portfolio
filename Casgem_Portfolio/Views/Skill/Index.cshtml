@@ -1,0 +1,23 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblSkill>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Yetenek-Kayan Yazı Sayfası</h2>
+
+
+<table class="table table-hover">
+    <tr style="background-color:burlywood ;text-align:center">
+
+        <th>Yetenek Adı</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="text-align:center">
+            <td>@item.SkillName</td>
+            <td><a href="/Skill/EditSkill/@item.SkillId" class="btn btn-info ; align-center">Yetenek Güncelle</a></td>
+        </tr>
+    }
+</table>

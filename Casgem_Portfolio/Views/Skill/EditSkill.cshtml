@@ -1,0 +1,15 @@
+﻿@model Casgem_Portfolio.Models.Entities.TblSkill
+@{
+    ViewBag.Title = "EditSkill";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Yetenek Sayfası Düzenle</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.SkillId)
+    <label>Yetenek Adı</label>
+    @Html.TextBoxFor(x => x.SkillName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info"> Kaydet</button>
+</form>
