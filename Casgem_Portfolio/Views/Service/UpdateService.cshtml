@@ -12,14 +12,7 @@
 <form method="post">
     @Html.HiddenFor(x => x.ServiceID)
     <label>Hizmet Başlığı</label>
-    @Html.TextBoxFor(x => x.ServiceTitle, new { @class = "form-control" })
-    <br />
-    <label>Hizmet İkonu</label>
-    @Html.TextBoxFor(x => x.ServiceIcon, new { @class = "form-control" })
-    <br />
-    <label>Hizmet Servis Numarası</label>
-    @Html.TextBoxFor(x => x.ServiceNumber, new { @class = "form-control" })
-    <br />
+    @Html.TextBoxFor(x => x.ServiceTitle, new { @class = "form-control" })   
     <label>Hizmet İçeriği</label>
     @Html.TextBoxFor(x => x.ServiceContent, new { @class = "form-control" })
     <br />

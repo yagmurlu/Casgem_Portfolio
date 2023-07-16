@@ -1,0 +1,28 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblResume>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2 style="text-align:center; color:crimson">Kısa Özgeçmiş Sayfası</h2>
+
+<p><a href="/Resum/AddResum/" class="btn btn-info">Yeni Özgeçmiş</a></p>
+<table class="table table-hover" style="text-align:center">
+    <tr style="background-color:burlywood">
+        <th>Başlık 1</th>
+        <th>Başlık 2</th>
+        <th>Açıklama</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Title1</td>
+            <td>@item.Title2</td>
+            <td>@item.Description</td>
+            <td><a href="/Resum/DeleteResum/@item.Id" class="btn btn-danger ; align-center ">Sil</a></td>
+            <td><a href="/Resum/EditResum/@item.Id" class="btn btn-info ; align-center">Güncelle</a></td>
+        </tr>
+    }
+</table>

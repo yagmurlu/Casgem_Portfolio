@@ -137,6 +137,7 @@
     <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\ReferenceController.cs" />
+    <Compile Include="Controllers\ResumController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\SocialMediaController.cs" />
@@ -413,7 +414,7 @@
     <Content Include="Views\Portfolio\PartialNavbar.cshtml" />
     <Content Include="Views\Portfolio\PartialFeature.cshtml" />
     <Content Include="Views\Portfolio\PartialIntereset.cshtml" />
-    <Content Include="Views\Portfolio\MyResult.cshtml" />
+    <Content Include="Views\Portfolio\MyResum.cshtml" />
     <Content Include="Views\Portfolio\PartialStatistic.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
@@ -438,6 +439,9 @@
     <Content Include="Views\SocialMedia\Index.cshtml" />
     <Content Include="Views\SocialMedia\AddSocial.cshtml" />
     <Content Include="Views\SocialMedia\UpdateSocial.cshtml" />
+    <Content Include="Views\Resum\Index.cshtml" />
+    <Content Include="Views\Resum\AddResum.cshtml" />
+    <Content Include="Views\Resum\EditResum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

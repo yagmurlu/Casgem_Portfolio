@@ -1,0 +1,24 @@
+﻿@model Casgem_Portfolio.Models.Entities.TblResume
+@{
+    ViewBag.Title = "EditResum";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Kısa Özgeçmiş Düzenle</h2>
+
+
+<form method="post">
+    @Html.HiddenFor(x => x.Id)
+    <label>Başlık-2</label>
+    @Html.TextBoxFor(x => x.Title1, new { @class = "form-control" })
+    <br />
+    <label>Başlık-2</label>
+    @Html.TextBoxFor(x => x.Title2, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+
+
+    <button class="btn btn-info"> Kaydet</button>
+</form>

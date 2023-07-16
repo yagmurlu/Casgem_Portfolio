@@ -100,8 +100,6 @@
           </Key>
           <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ServiceTitle" Type="nvarchar" MaxLength="100" />
-          <Property Name="ServiceIcon" Type="nvarchar" MaxLength="100" />
-          <Property Name="ServiceNumber" Type="char" MaxLength="2" />
           <Property Name="ServiceContent" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TblSkill">
@@ -169,7 +167,6 @@
           <EntitySet Name="TblMessage" EntityType="CasgemPortfolioModel.TblMessage" />
           <EntitySet Name="Project" EntityType="CasgemPortfolioModel.Project" />
           <EntitySet Name="Reference" EntityType="CasgemPortfolioModel.Reference" />
-          <EntitySet Name="TblService" EntityType="CasgemPortfolioModel.TblService" />
           <EntitySet Name="TblInterest" EntityType="CasgemPortfolioModel.TblInterest" />
           <EntitySet Name="TblResume" EntityType="CasgemPortfolioModel.TblResume" />
           <EntitySet Name="sysdiagrams" EntityType="CasgemPortfolioModel.sysdiagrams" />
@@ -182,6 +179,7 @@
           <EntitySet Name="TblSkill" EntityType="CasgemPortfolioModel.TblSkill" />
           <EntitySet Name="TblAbout" EntityType="CasgemPortfolioModel.TblAbout" />
           <EntitySet Name="TblSocialMedia" EntityType="CasgemPortfolioModel.TblSocialMedia" />
+          <EntitySet Name="TblService" EntityType="CasgemPortfolioModel.TblService" />
         </EntityContainer>
         <EntityType Name="TblMessage">
           <Key>
@@ -209,16 +207,6 @@
           <Property Name="ReferenceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="TblService">
-          <Key>
-            <PropertyRef Name="ServiceID" />
-          </Key>
-          <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ServiceTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ServiceIcon" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ServiceNumber" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-          <Property Name="ServiceContent" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TblInterest">
           <Key>
@@ -303,6 +291,14 @@
           <Property Name="SocialMediaURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SocialMediaIcon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="TblService">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceContent" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -346,17 +342,6 @@
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
                 <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TblService">
-            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblService">
-              <MappingFragment StoreEntitySet="TblService">
-                <ScalarProperty Name="ServiceContent" ColumnName="ServiceContent" />
-                <ScalarProperty Name="ServiceNumber" ColumnName="ServiceNumber" />
-                <ScalarProperty Name="ServiceIcon" ColumnName="ServiceIcon" />
-                <ScalarProperty Name="ServiceTitle" ColumnName="ServiceTitle" />
-                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -434,6 +419,15 @@
                 <ScalarProperty Name="SocialMediaURL" ColumnName="SocialMediaURL" />
                 <ScalarProperty Name="SocialMediaName" ColumnName="SocialMediaName" />
                 <ScalarProperty Name="SocialMediaId" ColumnName="SocialMediaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblService">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblService">
+              <MappingFragment StoreEntitySet="TblService">
+                <ScalarProperty Name="ServiceContent" ColumnName="ServiceContent" />
+                <ScalarProperty Name="ServiceTitle" ColumnName="ServiceTitle" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

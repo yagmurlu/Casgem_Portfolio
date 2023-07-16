@@ -40,12 +40,7 @@ namespace Casgem_Portfolio.Controllers
             ViewBag.featureImage=db.TblFeature.Select(x=>x.FeatureImageURL).FirstOrDefault();
             return PartialView();
         }
-        //public PartialViewResult PartialIntereset()
-        //{
-        //    ViewBag.featureInterest = db.TblInterest.Select(x => x.InteresetName).SingleOrDefault();
-        //    return PartialView();
-        //}
-        public PartialViewResult MyResult()
+        public PartialViewResult MyResum()
         {
             var values=db.TblResume.ToList();
             return PartialView(values);
@@ -65,7 +60,8 @@ namespace Casgem_Portfolio.Controllers
         }
         public PartialViewResult PartialService()
         {
-            return PartialView();
+            var values = db.TblService.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialTestimonial()
         {

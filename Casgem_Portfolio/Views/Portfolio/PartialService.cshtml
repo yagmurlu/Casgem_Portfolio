@@ -1,118 +1,39 @@
-﻿<section class="w3l-services">
+﻿@model List<Casgem_Portfolio.Models.Entities.TblService> 
+
+<section class="w3l-services">
     <div class="blog py-5" id="services">
         <div class="container py-lg-5">
-            <h5 class="title-small text-center">Services</h5>
-            <h3 class="title-big text-center mb-sm-5 mb-4">What I do for you</h3>
+            <h5 class="title-small text-center">Hizmetlerim</h5>
+            <h3 class="title-big text-center mb-sm-5 mb-4">Neler Yapabilirim?</h3>
             <div class="row">
                 <div class="col-md-12 mx-auto pr-2">
                     <div class="owl-two owl-carousel owl-theme">
-                        <div class="item">
-                            <div class="card">
-                                <div class="box-wrap">
-                                    <div class="icon">
-                                        <span class="fa fa-pencil-square-o"></span>
-                                    </div>
-                                    <h4 class="number">01</h4>
-                                    <h4><a href="#url">UI/UX Design</a></h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet sed consectetur adipisicing elit.
-                                        doloret quas saepe autem, dolor set.
-                                    </p>
-                                    <a href="#read" class="read">Read more</a>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="item">
-                            <div class="card">
-                                <div class="box-wrap">
-                                    <div class="icon">
-                                        <span class="fa fa-laptop"></span>
+                        @foreach (var item in Model)
+                        {
+                            <div class="item">
+                                <div class="card">
+                                    <div class="box-wrap">
+                                        <div class="icon">
+                                            <span class="fa fa-pencil-square-o"></span>
+                                        </div>
+                                        @*<h4 class="number">01</h4>*@
+                                        <h4><a href="#url">@item.ServiceTitle</a></h4>
+                                        <p>
+                                            @item.ServiceContent
+                                        </p>
+                                        <a href="#read" class="read">Read more</a>
                                     </div>
-                                    <h4 class="number">02</h4>
-                                    <h4><a href="#url">Web Development</a></h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet sed consectetur adipisicing elit.
-                                        doloret quas saepe autem, dolor set.
-                                    </p>
-                                    <a href="#read" class="read">Read more</a>
                                 </div>
                             </div>
-                        </div>
+                        }
 
-                        <div class="item">
-                            <div class="card">
-                                <div class="box-wrap">
-                                    <div class="icon">
-                                        <span class="fa fa-area-chart"></span>
-                                    </div>
-                                    <h4 class="number">03</h4>
-                                    <h4><a href="#url">Research & Analysis</a></h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet sed consectetur adipisicing elit.
-                                        doloret quas saepe autem, dolor set.
-                                    </p>
-                                    <a href="#read" class="read">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="card">
-                                <div class="box-wrap">
-                                    <div class="icon">
-                                        <span class="fa fa-pencil-square-o"></span>
-                                    </div>
-                                    <h4 class="number">04</h4>
-                                    <h4><a href="#url">UI/UX Design</a></h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet sed consectetur adipisicing elit.
-                                        doloret quas saepe autem, dolor set.
-                                    </p>
-                                    <a href="#read" class="read">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="card">
-                                <div class="box-wrap">
-                                    <div class="icon">
-                                        <span class="fa fa-laptop"></span>
-                                    </div>
-                                    <h4 class="number">05</h4>
-                                    <h4><a href="#url">Web Development</a></h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet sed consectetur adipisicing elit.
-                                        doloret quas saepe autem, dolor set.
-                                    </p>
-                                    <a href="#read" class="read">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="card">
-                                <div class="box-wrap">
-                                    <div class="icon">
-                                        <span class="fa fa-area-chart"></span>
-                                    </div>
-                                    <h4 class="number">06</h4>
-                                    <h4><a href="#url">Research & Analysis</a></h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet sed consectetur adipisicing elit.
-                                        doloret quas saepe autem, dolor set.
-                                    </p>
-                                    <a href="#read" class="read">Read more</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
             <div class="mt-5 text-more">
                 <p class="mt-4 pt-3 sample text-center">
-                    <a href="services.html">View All Services <span class="pl-2 fa fa-long-arrow-right"></span></a>
+                    <a href="services.html">Tüm Projeler <span class="pl-2 fa fa-long-arrow-right"></span></a>
                 </p>
             </div>
         </div>

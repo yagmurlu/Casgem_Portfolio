@@ -29,7 +29,6 @@ namespace Casgem_Portfolio.Models.Entities
         public virtual DbSet<TblMessage> TblMessage { get; set; }
         public virtual DbSet<Project> Project { get; set; }
         public virtual DbSet<Reference> Reference { get; set; }
-        public virtual DbSet<TblService> TblService { get; set; }
         public virtual DbSet<TblInterest> TblInterest { get; set; }
         public virtual DbSet<TblResume> TblResume { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
@@ -38,5 +37,6 @@ namespace Casgem_Portfolio.Models.Entities
         public virtual DbSet<TblSkill> TblSkill { get; set; }
         public virtual DbSet<TblAbout> TblAbout { get; set; }
         public virtual DbSet<TblSocialMedia> TblSocialMedia { get; set; }
+        public virtual DbSet<TblService> TblService { get; set; }
     }
 }

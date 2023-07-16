@@ -46,8 +46,6 @@ namespace Casgem_Portfolio.Controllers
         {
             var value = db.TblService.Find(p.ServiceID);
             value.ServiceTitle=p.ServiceTitle;
-            value.ServiceIcon=p.ServiceIcon;
-            value.ServiceNumber=p.ServiceNumber;
             value.ServiceContent=p.ServiceContent;
             db.SaveChanges();
             return RedirectToAction("Index");

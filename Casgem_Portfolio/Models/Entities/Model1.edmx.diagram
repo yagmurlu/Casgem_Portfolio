@@ -9,7 +9,6 @@
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblMessage" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.Project" Width="1.5" PointX="3.375" PointY="3.75" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.Reference" Width="1.5" PointX="5.375" PointY="0.75" />
-        <EntityTypeShape EntityType="CasgemPortfolioModel.TblService" Width="1.5" PointX="5.5" PointY="2.5" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblInterest" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblResume" Width="1.5" PointX="3.375" PointY="6.75" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.sysdiagrams" Width="1.5" PointX="7.375" PointY="0.75" />
@@ -19,6 +18,7 @@
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblSkill" Width="1.5" PointX="8.375" PointY="3.75" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblAbout" Width="1.5" PointX="9.375" PointY="0.75" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblSocialMedia" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblService" Width="1.5" PointX="5.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
