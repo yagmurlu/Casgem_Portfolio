@@ -111,6 +111,15 @@
           <Property Name="SkillId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SkillName" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="TblSocialMedia">
+          <Key>
+            <PropertyRef Name="SocialMediaId" />
+          </Key>
+          <Property Name="SocialMediaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SocialMediaName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SocialMediaURL" Type="nvarchar(max)" />
+          <Property Name="SocialMediaIcon" Type="nvarchar(max)" />
+        </EntityType>
         <Association Name="FK_TblEmployee_TblDepartment">
           <End Role="TblDepartment" Type="Self.TblDepartment" Multiplicity="0..1" />
           <End Role="TblEmployee" Type="Self.TblEmployee" Multiplicity="*" />
@@ -136,6 +145,7 @@
           <EntitySet Name="TblResume" EntityType="Self.TblResume" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblService" EntityType="Self.TblService" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSkill" EntityType="Self.TblSkill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSocialMedia" EntityType="Self.TblSocialMedia" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_TblEmployee_TblDepartment" Association="Self.FK_TblEmployee_TblDepartment">
             <End Role="TblDepartment" EntitySet="TblDepartment" />
             <End Role="TblEmployee" EntitySet="TblEmployee" />
@@ -171,6 +181,7 @@
           </AssociationSet>
           <EntitySet Name="TblSkill" EntityType="CasgemPortfolioModel.TblSkill" />
           <EntitySet Name="TblAbout" EntityType="CasgemPortfolioModel.TblAbout" />
+          <EntitySet Name="TblSocialMedia" EntityType="CasgemPortfolioModel.TblSocialMedia" />
         </EntityContainer>
         <EntityType Name="TblMessage">
           <Key>
@@ -282,6 +293,15 @@
           <Property Name="AboutDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AboutTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="AboutImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblSocialMedia">
+          <Key>
+            <PropertyRef Name="SocialMediaId" />
+          </Key>
+          <Property Name="SocialMediaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SocialMediaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SocialMediaURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SocialMediaIcon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -404,6 +424,16 @@
                 <ScalarProperty Name="AboutTitle" ColumnName="AboutTitle" />
                 <ScalarProperty Name="AboutDescription" ColumnName="AboutDescription" />
                 <ScalarProperty Name="AboutId" ColumnName="AboutId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSocialMedia">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblSocialMedia">
+              <MappingFragment StoreEntitySet="TblSocialMedia">
+                <ScalarProperty Name="SocialMediaIcon" ColumnName="SocialMediaIcon" />
+                <ScalarProperty Name="SocialMediaURL" ColumnName="SocialMediaURL" />
+                <ScalarProperty Name="SocialMediaName" ColumnName="SocialMediaName" />
+                <ScalarProperty Name="SocialMediaId" ColumnName="SocialMediaId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

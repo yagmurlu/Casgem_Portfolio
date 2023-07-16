@@ -37,5 +37,6 @@ namespace Casgem_Portfolio.Models.Entities
         public virtual DbSet<TblEmployee> TblEmployee { get; set; }
         public virtual DbSet<TblSkill> TblSkill { get; set; }
         public virtual DbSet<TblAbout> TblAbout { get; set; }
+        public virtual DbSet<TblSocialMedia> TblSocialMedia { get; set; }
     }
 }

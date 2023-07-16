@@ -139,6 +139,7 @@
     <Compile Include="Controllers\ReferenceController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
+    <Compile Include="Controllers\SocialMediaController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -192,6 +193,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\TblSkill.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\TblSocialMedia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -431,6 +435,9 @@
     <Content Include="Views\Skill\Index.cshtml" />
     <Content Include="Views\Skill\EditSkill.cshtml" />
     <Content Include="Views\Skill\AddSkill.cshtml" />
+    <Content Include="Views\SocialMedia\Index.cshtml" />
+    <Content Include="Views\SocialMedia\AddSocial.cshtml" />
+    <Content Include="Views\SocialMedia\UpdateSocial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

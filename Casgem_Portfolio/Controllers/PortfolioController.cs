@@ -30,6 +30,7 @@ namespace Casgem_Portfolio.Controllers
         }
         public PartialViewResult PartialFooter()
         {
+            
             return PartialView();
         }
         public PartialViewResult PartialFeature()
