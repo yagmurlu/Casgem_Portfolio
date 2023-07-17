@@ -1,0 +1,20 @@
+﻿@model Casgem_Portfolio.Models.Entities.TblAbout
+@{
+    ViewBag.Title = "EditAbout";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+<h2>Ben Kimim Düzenleme Sayfası</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.AboutId)
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.AboutTitle, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.AboutDescription, new { @class = "form-control" })
+    <br />
+    <label>Resim</label>
+    @Html.TextBoxFor(x => x.AboutImageURL, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info"> Kaydet</button>
+</form>

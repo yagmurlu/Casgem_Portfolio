@@ -128,6 +128,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\FeatureController.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\SocialMediaController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
+    <Compile Include="Controllers\TestimonialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,6 +199,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\TblSocialMedia.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\TblTestimonial.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -442,6 +447,11 @@
     <Content Include="Views\Resum\Index.cshtml" />
     <Content Include="Views\Resum\AddResum.cshtml" />
     <Content Include="Views\Resum\EditResum.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\EditAbout.cshtml" />
+    <Content Include="Views\Testimonial\Index.cshtml" />
+    <Content Include="Views\Testimonial\AddTestimonial.cshtml" />
+    <Content Include="Views\Testimonial\UpdateTestimonial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

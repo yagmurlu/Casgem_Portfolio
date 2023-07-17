@@ -65,7 +65,8 @@ namespace Casgem_Portfolio.Controllers
         }
         public PartialViewResult PartialTestimonial()
         {
-            return PartialView();
+            var values=db.TblTestimonial.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialVideo()
         {

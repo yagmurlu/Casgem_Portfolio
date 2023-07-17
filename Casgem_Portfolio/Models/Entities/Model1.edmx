@@ -100,7 +100,7 @@
           </Key>
           <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ServiceTitle" Type="nvarchar" MaxLength="100" />
-          <Property Name="ServiceContent" Type="nvarchar" MaxLength="100" />
+          <Property Name="ServiceContent" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="TblSkill">
           <Key>
@@ -117,6 +117,15 @@
           <Property Name="SocialMediaName" Type="nvarchar" MaxLength="50" />
           <Property Name="SocialMediaURL" Type="nvarchar(max)" />
           <Property Name="SocialMediaIcon" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblTestimonial">
+          <Key>
+            <PropertyRef Name="TestimonialID" />
+          </Key>
+          <Property Name="TestimonialID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameSurname" Type="nvarchar" MaxLength="100" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="TestimonialContent" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <Association Name="FK_TblEmployee_TblDepartment">
           <End Role="TblDepartment" Type="Self.TblDepartment" Multiplicity="0..1" />
@@ -144,6 +153,7 @@
           <EntitySet Name="TblService" EntityType="Self.TblService" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSkill" EntityType="Self.TblSkill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSocialMedia" EntityType="Self.TblSocialMedia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblTestimonial" EntityType="Self.TblTestimonial" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_TblEmployee_TblDepartment" Association="Self.FK_TblEmployee_TblDepartment">
             <End Role="TblDepartment" EntitySet="TblDepartment" />
             <End Role="TblEmployee" EntitySet="TblEmployee" />
@@ -180,6 +190,7 @@
           <EntitySet Name="TblAbout" EntityType="CasgemPortfolioModel.TblAbout" />
           <EntitySet Name="TblSocialMedia" EntityType="CasgemPortfolioModel.TblSocialMedia" />
           <EntitySet Name="TblService" EntityType="CasgemPortfolioModel.TblService" />
+          <EntitySet Name="TblTestimonial" EntityType="CasgemPortfolioModel.TblTestimonial" />
         </EntityContainer>
         <EntityType Name="TblMessage">
           <Key>
@@ -297,7 +308,16 @@
           </Key>
           <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ServiceTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ServiceContent" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceContent" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblTestimonial">
+          <Key>
+            <PropertyRef Name="TestimonialID" />
+          </Key>
+          <Property Name="TestimonialID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TestimonialContent" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -428,6 +448,16 @@
                 <ScalarProperty Name="ServiceContent" ColumnName="ServiceContent" />
                 <ScalarProperty Name="ServiceTitle" ColumnName="ServiceTitle" />
                 <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblTestimonial">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblTestimonial">
+              <MappingFragment StoreEntitySet="TblTestimonial">
+                <ScalarProperty Name="TestimonialContent" ColumnName="TestimonialContent" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+                <ScalarProperty Name="TestimonialID" ColumnName="TestimonialID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
