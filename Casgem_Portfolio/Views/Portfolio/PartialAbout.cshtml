@@ -1,29 +1,28 @@
-﻿@model List<Casgem_Portfolio.Models.Entities.TblAbout>
+﻿
 
 <section class="w3l-index3" id="about">
   
     <div class="midd-w3 py-5">
       
         <div class="container py-lg-5 py-md-3">
-            @foreach (var item in Model)
-            {
+           
                 <div class="row">
-                    <div class="col-lg-4">
+                    @*<div class="col-lg-4">
                         <div class="position-relative">
 
                             <img src="@item.AboutImageURL" alt="" class="radius-image img-fluid">
                         </div>
-                    </div>
-                    <div class="col-lg-8 mt-lg-0 mt-5">
+                    </div>*@
+                    <div class="col-lg-offset-12 mt-lg-0 mt-5">
                         <h5 class="title-small mb-2">Ben Kimim?</h5>
-                        <h3 class="title-big">@item.AboutTitle</h3>
+                        <h3 class="title-big">@ViewBag.title</h3>
                         <p class="mt-4">
-                            @item.AboutDescription
+                            @ViewBag.description
                         </p>
-                        <a href="#download" class="btn btn-style btn-primary mt-lg-5 mt-4"> CV İndir</a>
+                        <a href="@Url.Action("Download", "Portfolio")"  class="btn btn-style btn-primary mt-lg-5 mt-4"> CV İndir</a>
                     </div>
                 </div>
-            }
+            
 
 
             </div>

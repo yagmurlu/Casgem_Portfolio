@@ -39,7 +39,7 @@
           <Property Name="AboutId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AboutDescription" Type="nvarchar(max)" />
           <Property Name="AboutTitle" Type="nvarchar" MaxLength="100" />
-          <Property Name="AboutImageURL" Type="nvarchar(max)" />
+          <Property Name="CvURL" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="TblDepartment">
           <Key>
@@ -92,7 +92,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title1" Type="nvarchar" MaxLength="100" />
           <Property Name="Title2" Type="nvarchar" MaxLength="100" />
-          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="TblService">
           <Key>
@@ -127,6 +127,16 @@
           <Property Name="Country" Type="nvarchar" MaxLength="50" />
           <Property Name="TestimonialContent" Type="nvarchar" MaxLength="1000" />
         </EntityType>
+        <EntityType Name="TblVideo">
+          <Key>
+            <PropertyRef Name="VideoId" />
+          </Key>
+          <Property Name="VideoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="VideoURL" Type="nvarchar(max)" />
+          <Property Name="VideoURL2" Type="nvarchar(max)" />
+        </EntityType>
         <Association Name="FK_TblEmployee_TblDepartment">
           <End Role="TblDepartment" Type="Self.TblDepartment" Multiplicity="0..1" />
           <End Role="TblEmployee" Type="Self.TblEmployee" Multiplicity="*" />
@@ -154,6 +164,7 @@
           <EntitySet Name="TblSkill" EntityType="Self.TblSkill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSocialMedia" EntityType="Self.TblSocialMedia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTestimonial" EntityType="Self.TblTestimonial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblVideo" EntityType="Self.TblVideo" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_TblEmployee_TblDepartment" Association="Self.FK_TblEmployee_TblDepartment">
             <End Role="TblDepartment" EntitySet="TblDepartment" />
             <End Role="TblEmployee" EntitySet="TblEmployee" />
@@ -178,7 +189,6 @@
           <EntitySet Name="Project" EntityType="CasgemPortfolioModel.Project" />
           <EntitySet Name="Reference" EntityType="CasgemPortfolioModel.Reference" />
           <EntitySet Name="TblInterest" EntityType="CasgemPortfolioModel.TblInterest" />
-          <EntitySet Name="TblResume" EntityType="CasgemPortfolioModel.TblResume" />
           <EntitySet Name="sysdiagrams" EntityType="CasgemPortfolioModel.sysdiagrams" />
           <EntitySet Name="TblDepartment" EntityType="CasgemPortfolioModel.TblDepartment" />
           <EntitySet Name="TblEmployee" EntityType="CasgemPortfolioModel.TblEmployee" />
@@ -187,10 +197,12 @@
             <End Role="TblEmployee" EntitySet="TblEmployee" />
           </AssociationSet>
           <EntitySet Name="TblSkill" EntityType="CasgemPortfolioModel.TblSkill" />
-          <EntitySet Name="TblAbout" EntityType="CasgemPortfolioModel.TblAbout" />
           <EntitySet Name="TblSocialMedia" EntityType="CasgemPortfolioModel.TblSocialMedia" />
           <EntitySet Name="TblService" EntityType="CasgemPortfolioModel.TblService" />
           <EntitySet Name="TblTestimonial" EntityType="CasgemPortfolioModel.TblTestimonial" />
+          <EntitySet Name="TblVideo" EntityType="CasgemPortfolioModel.TblVideo" />
+          <EntitySet Name="TblAbout" EntityType="CasgemPortfolioModel.TblAbout" />
+          <EntitySet Name="TblResume" EntityType="CasgemPortfolioModel.TblResume" />
         </EntityContainer>
         <EntityType Name="TblMessage">
           <Key>
@@ -225,15 +237,6 @@
           </Key>
           <Property Name="InteresetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="InteresetName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="TblResume">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Title2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -284,15 +287,6 @@
           <Property Name="SkillId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SkillName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="TblAbout">
-          <Key>
-            <PropertyRef Name="AboutId" />
-          </Key>
-          <Property Name="AboutId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AboutDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AboutTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AboutImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="TblSocialMedia">
           <Key>
             <PropertyRef Name="SocialMediaId" />
@@ -318,6 +312,34 @@
           <Property Name="NameSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TestimonialContent" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblVideo">
+          <Key>
+            <PropertyRef Name="VideoId" />
+          </Key>
+          <Property Name="VideoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="VideoURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VideoURL2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblAbout">
+          <Key>
+            <PropertyRef Name="AboutId" />
+          </Key>
+          <Property Name="AboutId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AboutDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AboutTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CvURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblResume">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Title2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -373,16 +395,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TblResume">
-            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblResume">
-              <MappingFragment StoreEntitySet="TblResume">
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Title2" ColumnName="Title2" />
-                <ScalarProperty Name="Title1" ColumnName="Title1" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="CasgemPortfolioModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -422,16 +434,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TblAbout">
-            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblAbout">
-              <MappingFragment StoreEntitySet="TblAbout">
-                <ScalarProperty Name="AboutImageURL" ColumnName="AboutImageURL" />
-                <ScalarProperty Name="AboutTitle" ColumnName="AboutTitle" />
-                <ScalarProperty Name="AboutDescription" ColumnName="AboutDescription" />
-                <ScalarProperty Name="AboutId" ColumnName="AboutId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TblSocialMedia">
             <EntityTypeMapping TypeName="CasgemPortfolioModel.TblSocialMedia">
               <MappingFragment StoreEntitySet="TblSocialMedia">
@@ -458,6 +460,37 @@
                 <ScalarProperty Name="Country" ColumnName="Country" />
                 <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
                 <ScalarProperty Name="TestimonialID" ColumnName="TestimonialID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblVideo">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblVideo">
+              <MappingFragment StoreEntitySet="TblVideo">
+                <ScalarProperty Name="VideoURL2" ColumnName="VideoURL2" />
+                <ScalarProperty Name="VideoURL" ColumnName="VideoURL" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="VideoId" ColumnName="VideoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAbout">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblAbout">
+              <MappingFragment StoreEntitySet="TblAbout">
+                <ScalarProperty Name="CvURL" ColumnName="CvURL" />
+                <ScalarProperty Name="AboutTitle" ColumnName="AboutTitle" />
+                <ScalarProperty Name="AboutDescription" ColumnName="AboutDescription" />
+                <ScalarProperty Name="AboutId" ColumnName="AboutId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblResume">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblResume">
+              <MappingFragment StoreEntitySet="TblResume">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title2" ColumnName="Title2" />
+                <ScalarProperty Name="Title1" ColumnName="Title1" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

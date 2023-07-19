@@ -204,6 +204,9 @@
     <Compile Include="Models\Entities\TblTestimonial.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entities\TblVideo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -452,6 +455,7 @@
     <Content Include="Views\Testimonial\Index.cshtml" />
     <Content Include="Views\Testimonial\AddTestimonial.cshtml" />
     <Content Include="Views\Testimonial\UpdateTestimonial.cshtml" />
+    <Content Include="Templates\Aleyna yağmur tümtürk.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

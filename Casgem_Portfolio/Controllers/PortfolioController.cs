@@ -30,9 +30,9 @@ namespace Casgem_Portfolio.Controllers
         }
         public PartialViewResult PartialFooter()
         {
-            
-            return PartialView();
-        }
+			var values = db.TblSocialMedia.ToList();
+			return PartialView(values);
+		}
         public PartialViewResult PartialFeature()
         {
             ViewBag.featureTitle = db.TblFeature.Select(x => x.FetaureTitle).FirstOrDefault();
@@ -55,10 +55,17 @@ namespace Casgem_Portfolio.Controllers
         }
         public PartialViewResult PartialAbout() 
         {
-            var values=db.TblAbout.ToList();
-            return PartialView(values);
+			ViewBag.title = db.TblAbout.Select(x => x.AboutTitle).FirstOrDefault();
+			ViewBag.description = db.TblAbout.Select(x => x.AboutDescription).FirstOrDefault();
+			return PartialView();
         }
-        public PartialViewResult PartialService()
+		public ActionResult Download()
+		{
+			ViewBag.cv = db.TblAbout.Select(x => x.CvURL).FirstOrDefault();
+			string filePath = Server.MapPath("~/Templates/" + ViewBag.cv);
+			return File(filePath, "application/pdf", ViewBag.cv);
+		}
+		public PartialViewResult PartialService()
         {
             var values = db.TblService.ToList();
             return PartialView(values);
@@ -70,7 +77,16 @@ namespace Casgem_Portfolio.Controllers
         }
         public PartialViewResult PartialVideo()
         {
+            //ViewBag.title = db.TblVideo.Select(x => x.Title).FirstOrDefault();
+            //ViewBag.description = db.TblVideo.Select(x => x.Description).FirstOrDefault();
+            //ViewBag.video = db.TblVideo.Select(x => x.Frame).FirstOrDefault();
+            ViewBag.title = db.TblVideo.Select(x => x.Title).FirstOrDefault();
+            ViewBag.description = db.TblVideo.Select(x => x.Description).FirstOrDefault();
+            ViewBag.video = db.TblVideo.Select(x => x.VideoURL).FirstOrDefault();
+            //ViewBag.video2 = db.TblVideo.Select(x => x.VideoURL2).FirstOrDefault();
             return PartialView();
+            //var values=db.TblVideo.ToList();
+            //return PartialView(values);
         }
         public PartialViewResult PartialScript()
         {
@@ -80,5 +96,7 @@ namespace Casgem_Portfolio.Controllers
 
             return PartialView();
         }
+
+      
     }
 }

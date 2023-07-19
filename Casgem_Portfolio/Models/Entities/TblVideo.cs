@@ -12,11 +12,12 @@ namespace Casgem_Portfolio.Models.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class TblAbout
+    public partial class TblVideo
     {
-        public int AboutId { get; set; }
-        public string AboutDescription { get; set; }
-        public string AboutTitle { get; set; }
-        public string CvURL { get; set; }
+        public int VideoId { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string VideoURL { get; set; }
+        public string VideoURL2 { get; set; }
     }
 }

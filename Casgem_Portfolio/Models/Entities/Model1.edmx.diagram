@@ -5,21 +5,22 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e57bb9783bef47e68c306fd0cb895225" Name="Diagram1">
-        <EntityTypeShape EntityType="CasgemPortfolioModel.TblFeature" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CasgemPortfolioModel.TblMessage" Width="1.5" PointX="0.75" PointY="3.75" />
-        <EntityTypeShape EntityType="CasgemPortfolioModel.Project" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblFeature" Width="1.5" PointX="1.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblMessage" Width="1.5" PointX="0.5" PointY="0.75" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.Project" Width="1.5" PointX="2.375" PointY="2.75" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.Reference" Width="1.5" PointX="5.375" PointY="0.75" />
-        <EntityTypeShape EntityType="CasgemPortfolioModel.TblInterest" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="CasgemPortfolioModel.TblResume" Width="1.5" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblInterest" Width="1.5" PointX="3.625" PointY="0.5" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.sysdiagrams" Width="1.5" PointX="7.375" PointY="0.75" />
-        <EntityTypeShape EntityType="CasgemPortfolioModel.TblDepartment" Width="1.5" PointX="5.375" PointY="7.375" />
-        <EntityTypeShape EntityType="CasgemPortfolioModel.TblEmployee" Width="1.5" PointX="7.625" PointY="7" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblDepartment" Width="1.5" PointX="5.75" PointY="5.625" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblEmployee" Width="1.5" PointX="7.875" PointY="5.75" />
         <AssociationConnector Association="CasgemPortfolioModel.FK_TblEmployee_TblDepartment" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblSkill" Width="1.5" PointX="8.375" PointY="3.75" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblSocialMedia" Width="1.5" PointX="2.75" PointY="5" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblService" Width="1.5" PointX="6.625" PointY="3.375" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblTestimonial" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblVideo" Width="1.5" PointX="10.375" PointY="3.75" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblAbout" Width="1.5" PointX="9.375" PointY="0.75" />
-        <EntityTypeShape EntityType="CasgemPortfolioModel.TblSocialMedia" Width="1.5" PointX="0.75" PointY="9.75" />
-        <EntityTypeShape EntityType="CasgemPortfolioModel.TblService" Width="1.5" PointX="5.375" PointY="3.75" />
-        <EntityTypeShape EntityType="CasgemPortfolioModel.TblTestimonial" Width="1.5" PointX="3.375" PointY="9.75" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblResume" Width="1.5" PointX="4.625" PointY="3.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

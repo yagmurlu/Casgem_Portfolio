@@ -28,7 +28,7 @@ namespace Casgem_Portfolio.Controllers
             var value = db.TblAbout.Find(p.AboutId);
             value.AboutTitle = p.AboutTitle;
             value.AboutDescription = p.AboutDescription;
-            value.AboutImageURL = p.AboutImageURL;
+            value.CvURL = p.CvURL;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
