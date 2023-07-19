@@ -28,7 +28,8 @@ namespace Casgem_Portfolio.Controllers
         {
             return PartialView();
         }
-        public PartialViewResult PartialFooter()
+		
+		public PartialViewResult PartialFooter()
         {
 			var values = db.TblSocialMedia.ToList();
 			return PartialView(values);

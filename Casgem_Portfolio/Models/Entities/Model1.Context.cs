@@ -40,5 +40,6 @@ namespace Casgem_Portfolio.Models.Entities
         public virtual DbSet<TblVideo> TblVideo { get; set; }
         public virtual DbSet<TblAbout> TblAbout { get; set; }
         public virtual DbSet<TblResume> TblResume { get; set; }
+        public virtual DbSet<TblContact> TblContact { get; set; }
     }
 }

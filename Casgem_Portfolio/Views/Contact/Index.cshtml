@@ -15,10 +15,6 @@ Author URL: http://w3layouts.com
 <body>
     <!-- header -->
     @Html.Action("PartialNavbar", "Portfolio")
-    @Html.Action("PartialFeature", "Portfolio")
-    @Html.Action("MyResum", "Portfolio")
-    <!-- //header -->
-    @Html.Action("PartialStatistic", "Portfolio")
     <!-- contact breadcrumb -->
     @Html.Action("PartialContact", "Portfolio")
     <!-- contact breadcrumb -->
@@ -28,35 +24,7 @@ Author URL: http://w3layouts.com
         <div class="contacts-9 py-lg-5 py-md-4">
             <div class="container">
                 <div class="d-grid contact-view">
-                    <div class="cont-details">
-                        <div class="cont-top">
-                            <div class="cont-left text-center">
-                                <span class="fa fa-phone text-primary"></span>
-                            </div>
-                            <div class="cont-right">
-                                <h6>Call Me</h6>
-                                <p><a href="tel:+44 99 555 42">+123 45 67 89</a></p>
-                            </div>
-                        </div>
-                        <div class="cont-top margin-up">
-                            <div class="cont-left text-center">
-                                <span class="fa fa-envelope-o text-primary"></span>
-                            </div>
-                            <div class="cont-right">
-                                <h6>Email Me</h6>
-                                <p><a href="mailto:example@mail.com" class="mail">example@mail.com</a></p>
-                            </div>
-                        </div>
-                        <div class="cont-top margin-up">
-                            <div class="cont-left text-center">
-                                <span class="fa fa-map-marker text-primary"></span>
-                            </div>
-                            <div class="cont-right">
-                                <h6>Location</h6>
-                                <p>Address here, 208 Trainer Avenue street, Illinois, UK - 62617.</p>
-                            </div>
-                        </div>
-                    </div>
+                    @Html.Action("MyContactInfo", "Contact")
                     <div class="map-content-9">
                         <form method="post">
                             <div class="twice-two">

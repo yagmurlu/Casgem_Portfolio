@@ -1,0 +1,27 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblContact>
+@{
+    ViewBag.Title = "GetContact";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+
+<h2 style="color:brown ;text-align:center">İletişim Bilgileri</h2>
+
+<table class="table table-hover">
+    <tr style="background-color:burlywood ;text-align:center">
+
+        <th>Telefon Numarası</th>
+        <th>Mail Adresi</th>
+        <th>Adres</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.NumberPhone</td>
+            <td>@item.Email</td>
+            <td>@item.Location</td>
+            <td><a href="/Contact/UpdateContact/@item.ContactId" class="btn btn-info ; align-center">Güncelle</a></td>
+        </tr>
+    }
+</table>

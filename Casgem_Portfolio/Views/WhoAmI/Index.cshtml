@@ -1,0 +1,27 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblAbout>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Ben Kimim Sayfası</h2>
+
+<table class="table table-bordered" style="text-align:center">
+    <tr style="background-color:cadetblue">
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Resim URL</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AboutId</td>
+            <td>@item.AboutTitle</td>
+            <td>@item.AboutDescription</td>
+            <td>@item.CvURL</td>
+            <td><a href="/About/EditAbout/@item.AboutId" class="btn btn-success ; align-center">Güncelle</a></td>
+        </tr>
+    }
+</table>

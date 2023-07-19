@@ -21,6 +21,7 @@
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblVideo" Width="1.5" PointX="10.375" PointY="3.75" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblAbout" Width="1.5" PointX="9.375" PointY="0.75" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblResume" Width="1.5" PointX="4.625" PointY="3.125" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblContact" Width="1.5" PointX="0.75" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
