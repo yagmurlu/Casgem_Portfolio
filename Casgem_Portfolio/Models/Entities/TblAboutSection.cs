@@ -12,10 +12,14 @@ namespace Casgem_Portfolio.Models.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Project
+    public partial class TblAboutSection
     {
-        public int ProjectID { get; set; }
-        public string ProjectName { get; set; }
-        public string ProjectDetails { get; set; }
+        public int Id { get; set; }
+        public string Name_Surname { get; set; }
+        public Nullable<int> Age { get; set; }
+        public string City { get; set; }
+        public string Email { get; set; }
+        public string Description { get; set; }
+        public string Section { get; set; }
     }
 }

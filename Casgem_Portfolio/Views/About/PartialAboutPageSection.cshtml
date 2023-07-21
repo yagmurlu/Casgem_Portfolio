@@ -1,0 +1,37 @@
+﻿<section class="w3l-aboutblock1" id="about">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-3">
+            <div class="row">
+               
+                <div class="col-lg-12 mt-lg-0 mt-5">
+                    
+                    <h3 class="title-big">@ViewBag.section</h3>
+                    <p class="mt-4">
+                        @ViewBag.description
+                    </p>
+                    <div class="my-info mt-4">
+                        <div class="single-info">
+                            <span>İsim:</span>
+                            <p>@ViewBag.aboutName</p>
+                        </div>
+                        <div class="single-info">
+                            <span>Yaş:</span>
+                            <p>@ViewBag.age</p>
+                        </div>
+                        <div class="single-info">
+                            <span>From:</span>
+                            <p>@ViewBag.city</p>
+                        </div>
+                        <div class="single-info">
+                            <span>Email:</span>
+                            <p><a href="mailto:@ViewBag.mail">@ViewBag.mail</a></p>
+                        </div>
+                    </div>
+                    <div class="my-social mt-lg-5 mt-4">
+                        <a href="@Url.Action("Download", "Portfolio")" class="btn btn-style btn-primary">CV İndir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

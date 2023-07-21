@@ -15,6 +15,8 @@ namespace Casgem_Portfolio.Controllers
         public ActionResult Index()
         {
             var value=db.Project.ToList();
+            
+            //DateTime.Parse(DateTime.Now.ToString("dd-MM-yyyy"));
             return View(value);
         }
         [HttpGet]
@@ -48,7 +50,6 @@ namespace Casgem_Portfolio.Controllers
         {
             var value = db.Project.Find(p.ProjectID);
             value.ProjectName= p.ProjectName;
-            value.ProfectDate = p.ProfectDate;
             value.ProjectDetails = p.ProjectDetails;
             db.SaveChanges();
             return RedirectToAction("Index");

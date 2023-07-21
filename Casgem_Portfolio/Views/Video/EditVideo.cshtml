@@ -1,0 +1,24 @@
+﻿@model Casgem_Portfolio.Models.Entities.TblVideo
+@{
+    ViewBag.Title = "EditVideo";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Video Düzenleme</h2>
+
+
+<form method="post">
+    @Html.HiddenFor(x => x.VideoId)
+    <label>Video Adı</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <label>Video Adres</label>
+    @Html.TextBoxFor(x => x.VideoURL, new { @class = "form-control" })
+    <br />
+
+
+    <button class="btn btn-info"> Kaydet</button>
+</form>

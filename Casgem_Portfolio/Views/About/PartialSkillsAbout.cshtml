@@ -1,0 +1,27 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblSkillsAbout>
+
+<section class="w3l-content-6 py-5">
+    <div class="content-6-mian py-lg-5 py-md-4">
+        <div class="container">
+            <h1 style="text-align:center">YETENEKLERİM</h1>
+            <br />          
+            <div class="content-info-in row">
+                @foreach (var item in Model)
+                {
+                    <div class="content-gd col-lg-6">
+
+                        <div class="progress-info">
+                            <h6 class="progress-tittle">@item.SkillAboutName</h6>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: @item.Ratio%"
+                                     aria-valuenow="@item.Ratio" aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                }
+                </div>          
+            </div>
+    </div>
+</section>

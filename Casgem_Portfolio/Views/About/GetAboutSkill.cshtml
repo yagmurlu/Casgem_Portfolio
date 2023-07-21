@@ -1,0 +1,29 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblSkillsAbout>
+@{
+    ViewBag.Title = "GetAboutSkill";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Yeteneklerim Sayfası</h2>
+
+
+<table class="table table-bordered" style="text-align:center">
+    <tr style="background-color:darkgoldenrod">
+        <th>Yetenek Adı</th>
+        <th>Oran (%100)</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.SkillAboutName</td>
+            <td>@item.Ratio</td>
+            <td><a href="/About/UpdateAboutScill/@item.SkillIAboutd/" class="btn btn-info ; align-center">Güncelle</a></td>
+            <td><a href="/About/DeleteAboutSkill/@item.SkillIAboutd/" class="btn btn-warning ; align-center">Sil</a></td>
+
+        </tr>
+    }
+</table>
+<td><a href="/About/AddAboutSkill/" class="btn btn-warning ; align-center">Yetenek Ekle</a></td>

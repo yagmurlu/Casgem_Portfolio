@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Controllers\WhoAmIController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -175,6 +176,9 @@
     <Compile Include="Models\Entities\TblAbout.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entities\TblAboutSection.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entities\TblContact.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -200,6 +204,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\TblSkill.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\TblSkillsAbout.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\TblSocialMedia.cs">
@@ -258,6 +265,7 @@
     <Content Include="Templates\alexander-starter\assets\images\bg.jpg" />
     <Content Include="Templates\alexander-starter\assets\images\g3.jpg" />
     <Content Include="Templates\alexander-starter\assets\images\g5.jpg" />
+    <Content Include="Templates\alexander-starter\assets\images\LinkedinProfil.jpeg" />
     <Content Include="Templates\alexander-starter\assets\images\myphoto.jpg" />
     <Content Include="Templates\alexander-starter\assets\images\myphoto1.jpg" />
     <Content Include="Templates\alexander-starter\assets\images\photo.png" />
@@ -286,6 +294,7 @@
     <Content Include="Templates\sidebar-01\css\bootstrap\utilities\_stretched-link.css" />
     <Content Include="Templates\sidebar-01\css\bootstrap\_media.css" />
     <Content Include="Templates\sidebar-01\css\style.css" />
+    <Content Include="Templates\sidebar-01\images\admin.jpg" />
     <Content Include="Templates\sidebar-01\images\logo.jpg" />
     <Content Include="Templates\sidebar-01\index.html" />
     <Content Include="Templates\sidebar-01\js\bootstrap.min.js" />
@@ -465,6 +474,16 @@
     <Content Include="Views\Contact\UpdateContact.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\About\PartialAbout.cshtml" />
+    <Content Include="Views\About\PartialAboutPageSection.cshtml" />
+    <Content Include="Views\About\PartialSkillsAbout.cshtml" />
+    <Content Include="Views\About\PartialMyProject.cshtml" />
+    <Content Include="Views\About\GetAboutSection.cshtml" />
+    <Content Include="Views\About\UpdateAboutSection.cshtml" />
+    <Content Include="Views\About\GetAboutSkill.cshtml" />
+    <Content Include="Views\About\UpdateAboutScill.cshtml" />
+    <Content Include="Views\About\AddAboutSkill.cshtml" />
+    <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\Video\EditVideo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

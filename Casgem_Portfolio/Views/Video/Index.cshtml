@@ -1,0 +1,26 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblVideo>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2 style="color:brown ;text-align:center">Video Sayfası</h2>
+
+<table class="table table-hover">
+    <tr style="background-color:burlywood ;text-align:center">
+
+        <th>Video Adı</th>
+        <th>Açıklama</th>
+        <th>Video Adresi</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.VideoURL</td>
+            <td><a href="/Video/EditVideo/@item.VideoId" class="btn btn-info ; align-center">Güncelle</a></td>
+        </tr>
+    }
+</table>

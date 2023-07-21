@@ -78,9 +78,6 @@ namespace Casgem_Portfolio.Controllers
         }
         public PartialViewResult PartialVideo()
         {
-            //ViewBag.title = db.TblVideo.Select(x => x.Title).FirstOrDefault();
-            //ViewBag.description = db.TblVideo.Select(x => x.Description).FirstOrDefault();
-            //ViewBag.video = db.TblVideo.Select(x => x.Frame).FirstOrDefault();
             ViewBag.title = db.TblVideo.Select(x => x.Title).FirstOrDefault();
             ViewBag.description = db.TblVideo.Select(x => x.Description).FirstOrDefault();
             ViewBag.video = db.TblVideo.Select(x => x.VideoURL).FirstOrDefault();

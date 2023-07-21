@@ -11,7 +11,6 @@
           </Key>
           <Property Name="ProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProjectName" Type="nvarchar" MaxLength="100" />
-          <Property Name="ProfectDate" Type="date" />
           <Property Name="ProjectDetails" Type="nvarchar" MaxLength="2000" />
         </EntityType>
         <EntityType Name="Reference">
@@ -40,6 +39,18 @@
           <Property Name="AboutDescription" Type="nvarchar(max)" />
           <Property Name="AboutTitle" Type="nvarchar" MaxLength="100" />
           <Property Name="CvURL" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblAboutSection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_Surname" Type="nvarchar" MaxLength="100" />
+          <Property Name="Age" Type="int" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Section" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TblContact">
           <Key>
@@ -118,6 +129,14 @@
           <Property Name="SkillId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SkillName" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="TblSkillsAbout">
+          <Key>
+            <PropertyRef Name="SkillIAboutd" />
+          </Key>
+          <Property Name="SkillIAboutd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SkillAboutName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ratio" Type="int" />
+        </EntityType>
         <EntityType Name="TblSocialMedia">
           <Key>
             <PropertyRef Name="SocialMediaId" />
@@ -163,6 +182,7 @@
           <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAboutSection" EntityType="Self.TblAboutSection" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblContact" EntityType="Self.TblContact" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDepartment" EntityType="Self.TblDepartment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" Schema="dbo" store:Type="Tables" />
@@ -172,6 +192,7 @@
           <EntitySet Name="TblResume" EntityType="Self.TblResume" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblService" EntityType="Self.TblService" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSkill" EntityType="Self.TblSkill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSkillsAbout" EntityType="Self.TblSkillsAbout" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSocialMedia" EntityType="Self.TblSocialMedia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTestimonial" EntityType="Self.TblTestimonial" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblVideo" EntityType="Self.TblVideo" Schema="dbo" store:Type="Tables" />
@@ -196,7 +217,6 @@
         <EntityContainer Name="CasgemPortfolioEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TblFeature" EntityType="Self.TblFeature" />
           <EntitySet Name="TblMessage" EntityType="CasgemPortfolioModel.TblMessage" />
-          <EntitySet Name="Project" EntityType="CasgemPortfolioModel.Project" />
           <EntitySet Name="Reference" EntityType="CasgemPortfolioModel.Reference" />
           <EntitySet Name="TblInterest" EntityType="CasgemPortfolioModel.TblInterest" />
           <EntitySet Name="sysdiagrams" EntityType="CasgemPortfolioModel.sysdiagrams" />
@@ -214,6 +234,9 @@
           <EntitySet Name="TblAbout" EntityType="CasgemPortfolioModel.TblAbout" />
           <EntitySet Name="TblResume" EntityType="CasgemPortfolioModel.TblResume" />
           <EntitySet Name="TblContact" EntityType="CasgemPortfolioModel.TblContact" />
+          <EntitySet Name="TblAboutSection" EntityType="CasgemPortfolioModel.TblAboutSection" />
+          <EntitySet Name="TblSkillsAbout" EntityType="CasgemPortfolioModel.TblSkillsAbout" />
+          <EntitySet Name="Project" EntityType="CasgemPortfolioModel.Project" />
         </EntityContainer>
         <EntityType Name="TblMessage">
           <Key>
@@ -224,15 +247,6 @@
           <Property Name="SenderMail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MessageSubject" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Content" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Project">
-          <Key>
-            <PropertyRef Name="ProjectID" />
-          </Key>
-          <Property Name="ProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ProfectDate" Type="DateTime" Precision="0" />
-          <Property Name="ProjectDetails" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Reference">
           <Key>
@@ -361,6 +375,34 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Location" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="TblAboutSection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Section" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblSkillsAbout">
+          <Key>
+            <PropertyRef Name="SkillIAboutd" />
+          </Key>
+          <Property Name="SkillIAboutd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SkillAboutName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ratio" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectDetails" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -385,16 +427,6 @@
                 <ScalarProperty Name="SenderMail" ColumnName="SenderMail" />
                 <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
                 <ScalarProperty Name="MessageID" ColumnName="MessageID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Project">
-            <EntityTypeMapping TypeName="CasgemPortfolioModel.Project">
-              <MappingFragment StoreEntitySet="Project">
-                <ScalarProperty Name="ProjectDetails" ColumnName="ProjectDetails" />
-                <ScalarProperty Name="ProfectDate" ColumnName="ProfectDate" />
-                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
-                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -521,6 +553,37 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="NumberPhone" ColumnName="NumberPhone" />
                 <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAboutSection">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblAboutSection">
+              <MappingFragment StoreEntitySet="TblAboutSection">
+                <ScalarProperty Name="Section" ColumnName="Section" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Name_Surname" ColumnName="Name_Surname" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSkillsAbout">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblSkillsAbout">
+              <MappingFragment StoreEntitySet="TblSkillsAbout">
+                <ScalarProperty Name="Ratio" ColumnName="Ratio" />
+                <ScalarProperty Name="SkillAboutName" ColumnName="SkillAboutName" />
+                <ScalarProperty Name="SkillIAboutd" ColumnName="SkillIAboutd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.Project">
+              <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="ProjectDetails" ColumnName="ProjectDetails" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

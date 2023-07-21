@@ -1,0 +1,30 @@
+﻿@model Casgem_Portfolio.Models.Entities.TblAboutSection
+@{
+    ViewBag.Title = "UpdateAboutSection";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Hakkımda Düzenleme</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.Id)
+    <label>İsim & Soyisim</label>
+    @Html.TextBoxFor(x => x.Name_Surname, new { @class = "form-control" })
+    <br />
+    <label>Yaş</label>
+    @Html.TextBoxFor(x => x.Age, new { @class = "form-control" })
+    <br />
+    <label>Şehir</label>
+    @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+    <br />
+    <label>Mail</label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Section, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info"> Kaydet</button>
+</form>

@@ -1,0 +1,36 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblAboutSection>
+@{
+    ViewBag.Title = "GetAboutSection";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2 style="color:brown ;text-align:center">Hakkımda Düzenleme Sayfası</h2>
+
+<table class="table table-bordered" style="text-align:center">
+    <tr style="background-color:darkgoldenrod">
+        <th>İsim & Soyisim</th>
+        <th>Yaş</th>
+        <th>Şehir</th>
+        <th>Email</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Name_Surname</td>
+            <td>@item.Age</td>
+            <td>@item.City</td>
+            <td>@item.Email</td>
+            <td>@item.Section</td>
+            <td>@item.Description</td>
+            <td><a href="/About/UpdateAboutSection/@item.Id" class="btn btn-info ; align-center">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+
+<a href="/About/GetAboutSkill/" class="btn btn-info ; align-center">Yetenek Bar Düzenle</a>
+
