@@ -19,6 +19,7 @@ namespace Casgem_Portfolio.Controllers
         [HttpPost]
         public ActionResult Index(TblMessage p)
         {
+
             db.TblMessage.Add(p);
             db.SaveChanges();
             return RedirectToAction("Index","Portfolio");
